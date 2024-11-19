@@ -25,10 +25,13 @@ const Home = ({ navigation }) => {
 		}
 
 		try {
-			const response = await axios.get(`http://192.168.1.11:5000/weather`, {
-				params: { city },
-				timeout: 10000,
-			});
+			const response = await axios.get(
+				`https://weatherapp-c2a2.onrender.com/weather`,
+				{
+					params: { city },
+					timeout: 10000,
+				}
+			);
 			animationRef.current.play(30, 70);
 			updateAnimation(response.data.weather[0].description);
 			setWeatherData(response.data);

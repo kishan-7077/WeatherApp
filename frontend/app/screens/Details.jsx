@@ -9,9 +9,12 @@ const Details = ({ route }) => {
 	useEffect(() => {
 		const fetchForecast = async () => {
 			try {
-				const response = await axios.get(`http://192.168.1.11:5000/forecast`, {
-					params: { city: weatherData.name },
-				});
+				const response = await axios.get(
+					`https://weatherapp-c2a2.onrender.com/forecast`,
+					{
+						params: { city: weatherData.name },
+					}
+				);
 				setForecastData(response.data);
 			} catch (error) {
 				console.error("Error fetching forecast data:", error);
