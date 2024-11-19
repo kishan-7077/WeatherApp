@@ -58,7 +58,7 @@ app.get("/forecast", async (req, res) => {
 	}
 });
 
-app.listen("/", (req, res) => {
+app.get("/", (req, res) => {
 	res.json({ message: "hello" });
 });
 
